@@ -12,4 +12,3 @@ class BasketPage(BasePage):
 
     def added_item_is_shown_on_basket_page(self):
         assert self.is_element_present(*BasketPageLocators.ONE_ADDED_ITEM_IN_BASKET)
-

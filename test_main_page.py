@@ -1,6 +1,5 @@
 from pages.main_page import MainPage
 from pages.login_page import LoginPage
-from pages.basket_page import BasketPage
 
 link = "http://selenium1py.pythonanywhere.com/"
 
@@ -18,7 +17,7 @@ def test_guest_should_see_login_link(browser):
 
 
 def test_guest_should_see_login_page(browser):
-    page = MainPage(browser, link)  # initialize Page Object, send driver instance and url to constructor
+    page = MainPage(browser, link)
     page.open()
     page.go_to_login_page()
     login_page = LoginPage(browser, browser.current_url)
