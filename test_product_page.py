@@ -2,7 +2,7 @@ from pages.product_page import ProductPage
 import pytest
 
 
-product_link_base = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
+product_link_base = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/coders-at-work_207"
 links = [f"{product_link_base}/?promo=offer{number}" for number in range(10) if number != 7]
 # adding number of offer to the base link and excluding 7 test
 
@@ -59,3 +59,6 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
     page = ProductPage(browser, link)
     page.open()
     page.go_to_login_page()
+
+
+

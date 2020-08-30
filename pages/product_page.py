@@ -3,9 +3,6 @@ from pages.locators import ProductPageLocators
 
 
 class ProductPage(BasePage):
-    def add_item_to_cart(self):
-        add_to_cart = self.browser.find_element(*ProductPageLocators.ADD_TO_CART_BUTTON)
-        add_to_cart.click()
 
     def input_item_name(self):
         input_item_name = self.browser.find_element(*ProductPageLocators.INPUT_ITEM_NAME).text

@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import math
 
 
-class BasePage():
+class BasePage:
     def __init__(self, browser, url, timeout=10):
         self.browser = browser
         self.url = url
@@ -56,3 +56,11 @@ class BasePage():
             alert.accept()
         except NoAlertPresentException:
             print("No second alert presented")
+
+    def open_basket(self):
+        view_basket_link = self.browser.find_element(*BasePageLocators.BASKET_LINK)
+        view_basket_link.click()
+
+    def add_item_to_cart(self):
+        add_to_cart = self.browser.find_element(*BasePageLocators.ADD_TO_CART_BUTTON)
+        add_to_cart.click()
