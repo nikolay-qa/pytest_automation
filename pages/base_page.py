@@ -6,9 +6,11 @@ import math
 
 
 class BasePage:
-    def __init__(self, browser, url, timeout=10):
+    def __init__(self, browser, url=None, timeout=10):
         self.browser = browser
         self.url = url
+        if url is not None:
+            self.url = url
         self.browser.implicitly_wait(timeout)
 
     def open(self):

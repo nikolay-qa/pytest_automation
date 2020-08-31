@@ -48,6 +48,7 @@ def test_success_message_is_disappeared_after_adding_product_to_basket(browser):
     page = ProductPage(browser, product_link_base)
     page.open()
     page.add_item_to_cart()
+    page = BasketPage(browser)
     page.message_is_disappeared()
 
 
@@ -71,6 +72,7 @@ def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     page = ProductPage(browser, product_link_base)
     page.open()
     page.open_basket()
+    page = BasketPage(browser)
     page.is_not_present_quantity_of_first_item_in_basket()
     page.should_be_message_no_items_in_basket()
 
@@ -80,6 +82,7 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     page = ProductPage(browser, link)
     page.open()
     page.open_basket()
+    page = BasketPage(browser)
     page.is_not_present_quantity_of_first_item_in_basket()
     page.should_be_message_no_items_in_basket()
 
@@ -89,6 +92,7 @@ def test_guest_can_see_added_product_in_basket_after_adding_one_item_and_clickin
     page.open()
     page.add_item_to_cart()
     page.open_basket()
+    page = BasketPage(browser)
     page.added_item_is_shown_on_basket_page()
 
 
